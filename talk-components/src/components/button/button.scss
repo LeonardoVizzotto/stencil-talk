@@ -1,0 +1,27 @@
+:host {
+  background: transparent;
+  display: inline-block;
+}
+
+.button {
+  align-items: center;
+  background: #000000dd;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 3em;
+  padding: 0 24px;
+  position: relative;
+  text-decoration: none;
+}
+
+::slotted([slot='before']) {
+  margin-right: 8px;
+}
+
+.button:hover,
+.button:focus {
+  background: #000000;
+}

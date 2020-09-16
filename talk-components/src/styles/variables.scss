@@ -1,0 +1,24 @@
+$typography: (
+  family: (
+    base: (
+      sans-serif,
+    ),
+    title: (
+      'Anton',
+      sans-serif,
+    ),
+  ),
+  size: (
+    small: 10px,
+    medium: 16px,
+    large: 26px,
+  ),
+);
+
+@function map-get-deep($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}

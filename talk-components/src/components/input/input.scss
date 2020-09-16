@@ -1,0 +1,18 @@
+:host {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  vertical-align: bottom;
+  width: 100%;
+
+  > .input {
+    background: none;
+    border: 0;
+    outline: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    &:focus {
+      border-bottom: 3px solid black;
+    }
+  }
+}
