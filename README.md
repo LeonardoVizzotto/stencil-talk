@@ -27,7 +27,7 @@ Outros links uteis:
 https://css-tricks.com/an-introduction-to-web-components/
 https://developer.mozilla.org/pt-BR/docs/Web/Web_Components
 
-### HTML Templates:
+#### HTML Templates:
 
 A *tag* `<template>` serve para definir estruturas que não serão imediatamente renderizadas na página, mas podem ser futuramente utilizadas por algum *script*. Além da tag `<template>` ainda temos o `<slot>` que é utilizado para permitir que o usuário do *template* possa informar algum conteúdo dinâmico para ser exibido dentro do nosso componente.
 
@@ -70,4 +70,15 @@ com as tecnologias web mais conhecidas como *Angular, React, Vue*, etc. Reutiliz
 
 A documentação do Ionic é muito completa e é um ótimo material para se estudar essas tecnologias: https://ionicframework.com/docs/api
 
+### Vantagens
+
+ - Tecnologias nativas da web
+ - Fácil migração para tecnologias futuras
+ - *API* pequena (Fácil de aprender)
+ - Facilidade para se criar *Design Systems*
+ 
+### Desvantagens
+
+ - Mais uma tecnologia pra se aprender
+ - A integração com outros *frameworks* pode ser difícil de configurar
 
