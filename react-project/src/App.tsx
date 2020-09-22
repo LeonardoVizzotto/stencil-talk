@@ -4,7 +4,7 @@ import { MyNewsletter } from './components';
 
 function App() {
   return (
-    <MyNewsletter></MyNewsletter>
+    <MyNewsletter onSubmitEvent={e => console.log(e.detail)} ></MyNewsletter>
   );
 }
 

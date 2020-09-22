@@ -67,6 +67,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface MyNewsletter {
+        "onSubmitEvent"?: (event: CustomEvent<any>) => void;
     }
     interface MyText {
         "as"?: string;

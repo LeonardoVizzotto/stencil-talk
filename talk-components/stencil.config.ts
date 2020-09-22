@@ -13,6 +13,9 @@ export const config: Config = {
   ],
   outputTargets: [
     {
+      type: 'www',
+    },
+    {
       type: 'dist'
     },
     angularOutputTarget({

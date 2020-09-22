@@ -1,4 +1,4 @@
-import { Component, h, State, ComponentInterface } from '@stencil/core';
+import { Component, h, State, ComponentInterface, EventEmitter, Event } from '@stencil/core';
 @Component({
   tag: 'my-newsletter',
   styleUrl: 'newsletter.scss',
@@ -7,7 +7,18 @@ import { Component, h, State, ComponentInterface } from '@stencil/core';
 export class MyNewsletter implements ComponentInterface {
   @State() isClosed = false;
 
-  toggleIsClosed = () => (this.isClosed = !this.isClosed);
+  @State() name;
+  @State() email;
+
+  @Event({ eventName: 'submitEvent' }) submit?: EventEmitter;
+
+  onSubmit = () => {
+    this.submit.emit({
+      name: this.name,
+      email: this.email
+    });
+    this.isClosed = !this.isClosed;
+  };
 
   render() {
     const { isClosed } = this;
@@ -25,13 +36,13 @@ export class MyNewsletter implements ComponentInterface {
             <my-text as="h3" size="large" font="title">
               Se inscreva para não perder nenhuma novidade
             </my-text>
-            <my-input label="Como devo te chamar"></my-input>
-            <my-input label="Qual seu email"></my-input>
+            <my-input onChangeEvent={e => (this.name = e.detail)} label="Como devo te chamar"></my-input>
+            <my-input onChangeEvent={e => (this.email = e.detail)} label="Qual seu email"></my-input>
 
-            <my-button onClick={this.toggleIsClosed}>
+            <my-button onClick={this.onSubmit}>
               <span slot="before">✉️</span>
               Inscrever-se
-              </my-button>
+            </my-button>
           </div>
         </div>
       </div>

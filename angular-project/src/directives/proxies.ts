@@ -47,19 +47,23 @@ export class MyInput {
   }
 }
 
-
+import { MyNewsletter as IMyNewsletter } from 'talk-components/dist/types/components/newsletter/newsletter';
 export declare interface MyNewsletter extends Components.MyNewsletter {}
 
 @Component({
   selector: 'my-newsletter',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  outputs: ['submitEvent']
 })
 export class MyNewsletter {
+  /**  */
+  submitEvent!: IMyNewsletter['submit'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['submitEvent']);
   }
 }
 

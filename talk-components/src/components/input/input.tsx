@@ -9,13 +9,15 @@ let count = 0;
 export class Input implements ComponentInterface {
   private id = `my-input-${++count}`;
   @Prop() type: 'tel' | 'text' | 'date' | 'number' | 'search' | 'password' = 'text';
-  @Prop() value?: string;
+  @Prop({mutable: true}) value?: string;
   @Prop() label: string;
 
   @Event({ eventName: 'changeEvent' }) change?: EventEmitter;
 
   private handleInput(e: Event): void {
-    this.change && this.change.emit(e);
+    const el = e.target as HTMLInputElement;
+    this.value = el.value;
+    this.change && this.change.emit(el.value);
   }
 
   render() {
@@ -38,7 +40,7 @@ export class Input implements ComponentInterface {
           }}
           autoComplete="off"
           aria-labelledby={`${this.id}-label`}
-          aria-errormessage={`${this.id}-error`} // TODO
+          aria-errormessage={`${this.id}-error`}
         />
       </Host>
     );

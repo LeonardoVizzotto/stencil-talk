@@ -9,6 +9,10 @@
     <script nomodule src="/build/talk-components.js"></script>
   </head>
   <body>
-    <my-newsletter></my-newsletter>
+    <my-newsletter id="newsletter"></my-newsletter>
   </body>
+  <script>
+    const newsletter = document.getElementById("newsletter");
+    newsletter.addEventListener('submitEvent', e => console.log(e))
+  </script>
 </html>

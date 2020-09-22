@@ -28,6 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "@stencil/angular-output-target": "0.0.5",
-    "@stencil/react-output-target": "0.0.9"
+    "@stencil/react-output-target": "0.0.9",
+    "workbox-build": "^4.3.1"
   }
 }

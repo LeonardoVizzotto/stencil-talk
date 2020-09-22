@@ -3,10 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <my-newsletter></my-newsletter>
-    <router-outlet></router-outlet>
+    <my-newsletter (submitEvent)="onSubmit($event)"></my-newsletter>
   `,
   styles: []
 })
 export class AppComponent {
+  onSubmit(e: CustomEvent) {
+    console.log(e.detail);
+  }
 }
