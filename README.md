@@ -1,3 +1,9 @@
+## Rodando o projeto
+
+Como o foco desta apresentação é demonstrar o uso do Stencil, para deixar mais simples, esse projeto não utiliza ferramentas para  gerenciar *monorepos* como o *lerna* por exemplo.
+
+Portanto basta rodar `npm install && npm run build` no diretório `talk-components`, e `npm install && npm start` nos diretórios `angular-project` e `react-project`.
+
 ## Web Components
 
 É a utilização de um conjunto de tecnologias nativas da web que juntas permitem a criação de elementos customizáveis, encapsulados e reutilizáveis.
